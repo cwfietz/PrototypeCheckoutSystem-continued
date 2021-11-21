@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PrototypeCheckoutSystem
 {
@@ -6,7 +7,9 @@ namespace PrototypeCheckoutSystem
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var mainMenu = new Menu();
+            Menu.MainMenu();
+            System.Environment.Exit(0);
         }
     }
 }
