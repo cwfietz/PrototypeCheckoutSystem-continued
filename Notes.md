@@ -567,4 +567,7 @@ Copied previous Notes file to this new repository.
 
 Now to commit and push to GitHub
 
+Now to rename "Master" branch to "main" in git
+git branch -m master main
+
 
