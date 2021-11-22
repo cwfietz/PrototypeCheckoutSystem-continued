@@ -11,9 +11,9 @@ namespace PrototypeCheckoutSystem
         {
             MenuItems = new List<MenuItem>
             {
-                new MenuItem {Description = "Edit product and prices list", Execute = EditProductAndPricesList},
-                new MenuItem {Description = "Edit promotions", Execute = EditPromotions},
-                new MenuItem {Description = "Edit customer basket", Execute = EditCustomerBasket},
+                new MenuItem {Description = "Show product and prices list", Execute = EditProductAndPricesList},
+                new MenuItem {Description = "Show promotions", Execute = EditPromotions},
+                new MenuItem {Description = "Show customer basket", Execute = EditCustomerBasket},
                 new MenuItem {Description = "Calculate customer basket", Execute = CalculateCustomerBasket},
                 new MenuItem {Description = "Exit", Execute = Exit},
             };
