@@ -571,3 +571,40 @@ Now to rename "Master" branch to "main" in git
 git branch -m master main
 
 
+Added a menu
+[“C# console application menu system” Code Answer](https://www.codegrepper.com/code-examples/csharp/c%23+console+application+menu+system)
+
+Would like to generalize it a bit more.
+[What is the "correct" way of making a console menu?](https://stackoverflow.com/questions/53234070/what-is-the-correct-way-of-making-a-console-menu)
+[Convert a string to an enum in C#](https://stackoverflow.com/questions/16100/convert-a-string-to-an-enum-in-c-sharp)
+[Tutorial: Create a simple C# console app in Visual Studio 2017 (part 1 of 2)](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2017)
+[Tutorial: Create a simple C# console app in Visual Studio 2022 (part 1 of 2)](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2022)
+[Tutorial: Extend C# console app and debug in Visual Studio (part 2 of 2)](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console-part-2?view=vs-2022)
+There is no corresponding 2017 version
+[Wellb - Create a Menu in C# Console Application](https://wellsb.com/csharp/beginners/create-menu-csharp-console-application)
+[A Webdesign - Console App-Creating a Menu with Options and simple Calculations. Easy to follow tutorial](Console App-Creating a Menu with Options and simple Calculations. Easy to follow tutorial)
+
+Oh! Logging!
+[Reference .NET libraries: Write to a log](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console-part-2?view=vs-2022#reference-net-libraries-write-to-a-log)
+
+
+Focusing on:
+"Here is another approach, which is to create a class that represents a MenuItem, which has a description and an associated method that should be called if that item is chosen."
+of
+[What is the "correct" way of making a console menu?](https://stackoverflow.com/questions/53234070/what-is-the-correct-way-of-making-a-console-menu)
+
+12345678901234567890123456789012345678901234567890
+
+Change to numbered menu 
+
+Menu now extensable and allows the user to select 
+an integer instead of pressing the down arrow a
+number of times.
+Would like to generalize and refactor more but it
+is time to move onto the heart of the program.
+
+Next,
+Change "Edit" options to "Show"
+Create simple input files and begin developing the core Calculate algorithm, then work out from there.
+
+

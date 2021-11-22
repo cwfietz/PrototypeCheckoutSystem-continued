@@ -7,9 +7,8 @@ namespace PrototypeCheckoutSystem
     {
         public static void Main(string[] args)
         {
-            var mainMenu = new Menu();
+            Menu.PopulateMenuItems();
             Menu.MainMenu();
-            System.Environment.Exit(0);
         }
     }
 }

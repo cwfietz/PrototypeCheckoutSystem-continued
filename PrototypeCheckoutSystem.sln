@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeCheckoutSystem", "PrototypeCheckoutSystem.csproj", "{F5BD5FC0-10F9-4A4E-84E6-A570D6EAFE4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BDA52A0A-D2C3-4C8D-80A7-C3DDDBDC49DD}"
-	ProjectSection(SolutionItems) = preProject
-		EmptyClass.cs = EmptyClass.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
