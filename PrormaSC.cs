@@ -6,14 +6,14 @@ namespace PrototypeCheckoutSystem
 {
     class PrormaSC
     {
-        static void Main()
-        {
-            RdWrJsonFile();
-            Console.ReadLine();
-            Console.WriteLine("Exiting program.");
-            System.Environment.Exit(0);
+        //static void Main()
+        //{
+        //    RdWrJsonFile();
+        //    Console.ReadLine();
+        //    Console.WriteLine("Exiting program.");
+        //    System.Environment.Exit(0);
 
-        }
+        //}
 
         public static void RdWrJsonFile()
         {
