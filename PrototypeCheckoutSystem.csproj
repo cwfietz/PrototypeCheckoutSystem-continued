@@ -47,6 +47,7 @@
     <Compile Include="MoneyAmount.cs" />
     <Compile Include="MoneyAmountTests.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

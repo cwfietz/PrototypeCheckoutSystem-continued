@@ -631,3 +631,6 @@ And we are well past time to start using TDD
 [How to Unit Test using Visual Studio for Mac (it's easy!) - Method 2: Add NUnit to an Existing Project](https://grantwinney.com/tdd-test-driven-development-using-visual-studio-for-mac/#method-2-add-nunit-to-an-existing-project)
 
 [How to do constructor chaining in C#](https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp)
+
+[Embedding Quotes Within A C# String](https://www.davidgiard.com/2018/11/02/EmbeddingQuotesWithinACString.aspx)
+
