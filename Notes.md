@@ -634,3 +634,11 @@ And we are well past time to start using TDD
 
 [Embedding Quotes Within A C# String](https://www.davidgiard.com/2018/11/02/EmbeddingQuotesWithinACString.aspx)
 
+As of:
+    Mon Nov 22 19:41:19 2021 -0700
+        Add Product
+        
+I have products that have regular price.
+
+Next, put a few of products into a dictionary and then save it to json file to see the result.
+
