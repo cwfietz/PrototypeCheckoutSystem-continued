@@ -646,6 +646,12 @@ Next, put a few of products into a dictionary and then save it to json file to s
 [SortedDictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sorteddictionary-2?redirectedfrom=MSDN&view=net-6.0#remarks)
 [Dictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0#remarks)
 
+deciding if I should have
+<string name, Product> pairs in which the name is repeated,
+<string, Amount> pairs, or
+<string, decimal> pairs
+
+Just use the pair in the dictionary to represent what I've been calling a product.
 
 
 
