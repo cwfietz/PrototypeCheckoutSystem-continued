@@ -1,0 +1,6 @@
+{
+  "AuthenticateCmdlets": "toyota/v1",
+  "GetPowerState": "toyota/v1/Engine",
+  "PowerOff": "toyota/v1/Engine",
+  "PowerOn": "toyota/v1/Engine"
+}

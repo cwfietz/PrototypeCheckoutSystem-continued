@@ -608,3 +608,14 @@ Change "Edit" options to "Show"
 Create simple input files and begin developing the core Calculate algorithm, then work out from there.
 
 
+[Despite .NET Core 3 Deprecation, Newtonsoft JSON Serializer Still Rules NuGet Roost](https://visualstudiomagazine.com/articles/2020/07/28/json-serializers.aspx)
+
+https://www.newtonsoft.com/json
+
+
+[How to serialize and deserialize (marshal and unmarshal) JSON in .NET]()
+
+
+I had problems getting System.Text.Json to work so I found an example of making newtonsoft.json version 11.01 work.
+
+see commit message: Experiments with reading and writing json
