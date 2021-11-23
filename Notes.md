@@ -619,3 +619,15 @@ https://www.newtonsoft.com/json
 I had problems getting System.Text.Json to work so I found an example of making newtonsoft.json version 11.01 work.
 
 see commit message: Experiments with reading and writing json
+
+Now to build a product to price catalogue
+
+[What is the best data type to use for currency in C#?](https://www.tutorialspoint.com/what-is-the-best-data-type-to-use-for-currency-in-chash)
+decimal
+
+[C# Dictionary In C#](https://www.c-sharpcorner.com/UploadFile/mahesh/dictionary-in-C-Sharp/)
+
+And we are well past time to start using TDD 
+[How to Unit Test using Visual Studio for Mac (it's easy!) - Method 2: Add NUnit to an Existing Project](https://grantwinney.com/tdd-test-driven-development-using-visual-studio-for-mac/#method-2-add-nunit-to-an-existing-project)
+
+[How to do constructor chaining in C#](https://stackoverflow.com/questions/1814953/how-to-do-constructor-chaining-in-c-sharp)
