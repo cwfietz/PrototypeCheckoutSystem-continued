@@ -48,6 +48,8 @@
     <Compile Include="MoneyAmountTests.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductTests.cs" />
+    <Compile Include="ProductCatalogueTests.cs" />
+    <Compile Include="ProductCatalogue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

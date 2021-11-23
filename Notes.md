@@ -642,3 +642,10 @@ I have products that have regular price.
 
 Next, put a few of products into a dictionary and then save it to json file to see the result.
 
+[How do I convert a dictionary to a JSON String in C#?](https://stackoverflow.com/questions/5597349/how-do-i-convert-a-dictionary-to-a-json-string-in-c)
+[SortedDictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sorteddictionary-2?redirectedfrom=MSDN&view=net-6.0#remarks)
+[Dictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0#remarks)
+
+
+
+
