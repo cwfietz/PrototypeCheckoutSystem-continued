@@ -7,8 +7,8 @@ namespace PrototypeCheckoutSystem
 {
     public class CustomerBasket
     {
-        private List<string> CustomerBasketList { get; set; }
-        private static string filepath = "../../CustomerBasketFile.json";
+        public List<string> CustomerBasketList { get; set; }
+        public static string filepath = "../../CustomerBasketFile.json";
 
         public CustomerBasket(List<string> interumCustomerBasket)
         {

@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+
 namespace PrototypeCheckoutSystem
 {
     [TestFixture()]
@@ -16,6 +18,7 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
+            Console.WriteLine(calculate.ToString());
         }
 
         private Calculate GetSeedCalculate()
@@ -28,5 +31,7 @@ namespace PrototypeCheckoutSystem
             var result = new Calculate(catalogue, customerBasket);
             return result;
         }
+
+
     }
 }

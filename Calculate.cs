@@ -8,7 +8,8 @@ namespace PrototypeCheckoutSystem
     {
         public ProductCatalogue catalogue;
         public CustomerBasket customerBasket;
-        public SortedBasket sortedBasket;
+        public SortedDictionary<string, int> sortedBasket;
+
 
         public Calculate(ProductCatalogue catalogue, CustomerBasket customerBasket)
         {
@@ -16,54 +17,43 @@ namespace PrototypeCheckoutSystem
             this.customerBasket = customerBasket;
         }
 
-        internal void CountBasket()
+        public void CountBasket()
         {
-            var sortedBasket = BuildSortedBasket(customerBasket, sortedBasket);
-
-
-            //throw new NotImplementedException();
-        }
-    }
-
-    public class BuildSortedBasket
-    {
-        public BuildSortedBasket(CustomerBasket customerBasket, SortedBasket sortedBasket)
-        {
-            if (customerBasket != null)
+            var sortedBasket = new SortedDictionary<string, int>();
+            if (customerBasket == null)
             {
-                foreach (var item in customerBasket)
+                Console.WriteLine("Empty basket");
+                throw new Exception();
+            }
+
+            foreach (var item in customerBasket.CustomerBasketList )
+            {
+                if (sortedBasket.ContainsKey(item))
                 {
-                    sortedBasket.Add()
+                    int value = 0;
+                    sortedBasket.TryGetValue(item, out value);
+                    ++value;
+                    sortedBasket[item] = value;
+                }
+                else
+                {
+                    sortedBasket.Add(item, 1);
+                }
             }
+
+            this.sortedBasket = sortedBasket;
+        }
+
+        public override string ToString()
+        {
+            string output = "\n";
+
+            foreach (var item in sortedBasket)
+            {
+                output += item.Key + ": " + item.Value + "\n";
             }
 
-            return newBasket;
-        }
-
-    }
-
-    internal class SortedBasket
-    {
-        SortedDictionary<string, List<PricesAndQuantities> sortedBasket;
-        
-        public SortedBasket()
-        {
-
-        }
-
-        public void Add(PricesAndQuantities pricesAndQuantities)
-        {
-            sortedBasket.Add()
+            return output;
         }
     }
-
-    internal class PricesAndQuantities {
-    private Product product;
-    private int number;
-    private string promotion;
-    private decimal effectivePrice;
-}
-
-
-
 }
