@@ -826,3 +826,10 @@ CatalogueFile.json
   "Lettus": 6.0,
   "Nutmeg": 4.93
 }
+
+
+Redo MoneyAmount and Product tests
+
+Having the ProductCatalogue retrieve the data from the file is proving untestable and probably a bad design.
+Tomorrow I will try separating the file read and writing parts of the ProductCatalogue so that the other operations can be tested.
+

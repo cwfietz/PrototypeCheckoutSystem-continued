@@ -15,7 +15,7 @@ namespace PrototypeCheckoutSystem
 
         public ProductCatalogue()
         {
-            this.ProductCataloguDict = ReadCatalogueFromFile();
+            ProductCataloguDict = ReadCatalogueFromFile();
         }
 
         public static Dictionary<string, decimal> GenerateSeedCatalogue()
