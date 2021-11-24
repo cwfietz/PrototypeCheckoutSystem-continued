@@ -644,14 +644,89 @@ Next, put a few of products into a dictionary and then save it to json file to s
 
 [How do I convert a dictionary to a JSON String in C#?](https://stackoverflow.com/questions/5597349/how-do-i-convert-a-dictionary-to-a-json-string-in-c)
 [SortedDictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.sorteddictionary-2?redirectedfrom=MSDN&view=net-6.0#remarks)
+"If the list is populated all at once from sorted data, SortedList<TKey,TValue> is faster than SortedDictionary<TKey,TValue>."
+- But the customer basket will not be sorted and the calculation process will need have the data structed holding the results of the customer basket being built each time.
+
 [Dictionary<TKey,TValue> Class](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0#remarks)
 
-deciding if I should have
-<string name, Product> pairs in which the name is repeated,
+
+Add more catalogue tests and notes
+
+
+Deciding if I should have
+<string name, Product> 
+    pairs in which the name is repeated,
 <string, Amount> pairs, or
 <string, decimal> pairs
 
-Just use the pair in the dictionary to represent what I've been calling a product.
+Just use the pair in the dictionary to represent 
+what I've been calling a product.
 
+I'll continue with the current experiment for now.
 
+ExampleCatalogueAsDictOfProducts.json:
+{
+  "Pineapple": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 1.08
+    },
+    "Name": "Pineapple"
+  },
+  "Pepperoni": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 5.73
+    },
+    "Name": "Pepperoni"
+  }
+}
 
+I can see that this will work but it is a bit
+over done. Having the name as a property and the 
+key of each entry is redundant. Having the Symbol
+repeated for each entry is redundant.
+
+I'm am considering symplifying things knowing I can
+add the product object back in if needed.
+
+         
+All that is needed now is:
+
+{
+  "Pineapple": 1.08,
+  "Pepperoni": 5.73
+}
+         
+But, using the json serializers means I don't have
+to do the serialization manually. The output to the
+screen or a saved file for users can be different.
+Will continue the experiment with a new 
+toString() method. The dictionary of the catalogue
+would mostly likely be data stored behind a 
+database engine.
+
+What is the process of reading in the basket?
+It will result in a sorted dictionary of product 
+name as the key and the quantity as the value.
+
+The calculation will begin with retrieving the 
+regular price for each of the product names in the
+sorted dictionary. This will require the name as 
+the key and then pulling out the 
+product.regularprice.amount and appending that to
+ the value in the dictionary
+then applay promitions by item and quantity to 
+get the effective price for the product
+
+Then the total can be found by totalling the 
+effective prices. These results can be achieve by 
+a more functional style. Would the process be 
+easier if the amount is pulled from a name: amount 
+paring in the dicionary. I don't see there being a 
+big difference.
+
+Next, make a new diplay method.
+
+12345678901234567890123456789012345678901234567890
+         1         2         3         4         5

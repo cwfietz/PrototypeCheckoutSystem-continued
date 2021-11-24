@@ -1,0 +1,16 @@
+﻿{
+  "Pineapple": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 1.08
+    },
+    "Name": "Pineapple"
+  },
+  "Pepperoni": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 5.73
+    },
+    "Name": "Pepperoni"
+  }
+}
