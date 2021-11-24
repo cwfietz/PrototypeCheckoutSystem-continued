@@ -840,6 +840,8 @@ Add CustomerBasket
 using ProductCatalogue as a template
 neither should refer to reading the file in the constructor
 
-Spent to much time setting up a dev environment and too much time focusing on files instead of the core problem, implementing promotions.
+Spent too much time setting up a dev environment and too much time focusing on files instead of the core problem, implementing promotions.
 Next, implement Calculate and Promotions
+
+Spending too much time on Classes and Builders
 

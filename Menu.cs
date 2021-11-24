@@ -110,7 +110,7 @@ namespace PrototypeCheckoutSystem
             var interumBasket = CustomerBasket.ReadCustomerBasketFromFile();
             var customerBasket = new CustomerBasket(interumBasket);
 
-            var receipt = new Calculate(catalogue, customerBasket);
+            var calculation = new Calculate(catalogue, customerBasket);
 
             ReturnToMainMenu();
         }
