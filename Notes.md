@@ -733,3 +733,96 @@ Next, make a new diplay method.
                   
 [How to Sort a C# Dictionary By Key (and when not to!)]()https://csharpsage.com/sort-dictionary-by-key/#One-off_sorting_dictionary_by_key_and_by_value)
 
+
+
+Now that I'm attempting to read in the ProductCatalogue from a file, it is clear that a simple <string, decimal value> pair will be much easier to read back into a dictionary.
+So, next, simplify the whole ProductCatalogue class.
+[How do I read and write a C# string Dictionary to a file?](https://stackoverflow.com/questions/27025435/how-do-i-read-and-write-a-c-sharp-string-dictionary-to-a-file)
+
+OPTION 3 - Use JSON.NET
+File.WriteAllText("SomeFile.Txt", JsonConvert.SerializeObject(dictionary));
+
+Read:
+
+var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>
+    (File.ReadAllText("SomeFile.txt"));
+    
+    
+Or with JSON.Net you can serialize your dictionary to JSON and then write it to file and then deserialize it, like:
+    ```
+    Dictionary<string, string> dictionary = new Dictionary<string, string>();
+    dictionary.Add("1", "Some value 1");
+    dictionary.Add("2", "Something");
+    ```
+Storing Dictionary in file:
+    ```
+    string json = JsonConvert.SerializeObject(dictionary);
+    File.WriteAllText("SomeFile.Txt", json);
+    ```
+Getting Dictionary back from file:
+    ```
+    Dictionary<string, string> previousDictionary =
+     JsonConvert.DeserializeObject<Dictionary<string, string>>
+                                     (File.ReadAllText("SomeFile.txt"));
+    ```
+
+
+I can not write to files from tests but I can write to files from the production code.
+
+I can use
+```
+JsonConvert.SerializeObject(catalogue, Formatting.Indented);
+```
+to fomat the file to be eaiser to read.
+
+Now to commit and rebuild the ProductCatalogue class.
+
+
+
+Test writing and reading catalogue to file
+
+
+Now that I'm attempting to read in the ProductCatalogue from a file, it is clear that a simple <string, decimal value> pair will be much easier to read back into a dictionary.
+So, next, simplify the whole ProductCatalogue class.
+
+
+ExampleCatalogueAsDictOfProducts.json:
+{
+  "Pineapple": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 1.08
+    },
+    "Name": "Pineapple"
+  },
+  "Pepperoni": {
+    "RegularPrice": {
+      "Symbol": "$",
+      "Amount": 5.73
+    },
+    "Name": "Pepperoni"
+  }
+}
+
+Is harder to work with than:
+CatalogueFile.json
+{
+  "Pineapple": 3.99,
+  "Pepperoni": 5.73,
+  "Apple": 1.08,
+  "Orange": 1.68,
+  "Banana": 0.79,
+  "Milk": 2.85,
+  "Salmon": 20.64,
+  "Cheese": 7.42,
+  "Bread": 3.54,
+  "Olive oil": 12.58,
+  "Chocolate bar": 2.15,
+  "Fennel seeds": 3.45,
+  "Pepper": 4.05,
+  "Cantaloupe": 3.79,
+  "Eggs": 8.14,
+  "Celery": 2.75,
+  "Lettus": 6.0,
+  "Nutmeg": 4.93
+}

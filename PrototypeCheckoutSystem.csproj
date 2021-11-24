@@ -55,6 +55,7 @@
     <None Include="packages.config" />
     <None Include="SchemaList.json" />
     <None Include="ExampleCatalogueAsDictOfProducts.json" />
+    <None Include="CatalogueFile.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

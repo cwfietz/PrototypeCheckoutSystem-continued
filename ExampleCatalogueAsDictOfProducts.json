@@ -1,16 +1,60 @@
 ﻿{
-  "Pineapple": {
-    "RegularPrice": {
-      "Symbol": "$",
-      "Amount": 1.08
+    "Pepperoni": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 5.73
+        },
+        "Name": "Pepperoni"
     },
-    "Name": "Pineapple"
-  },
-  "Pepperoni": {
-    "RegularPrice": {
-      "Symbol": "$",
-      "Amount": 5.73
+    "Pineapple": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 3.99
+        },
+        "Name": "Pineapple"
     },
-    "Name": "Pepperoni"
-  }
+    "Apple": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 1.08
+        },
+        "Name": "Apple"
+    },
+    "Orange": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 1.68
+        },
+        "Name": "Orange"
+    },
+    "Banana": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 0.79
+        },
+        "Name": "Banana"
+    },
+    "Milk": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 2.85
+        },
+        "Name": "Milk"
+    },
+    "Salmon": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 20.64
+        },
+        "Name": "Salmon"
+    },
+    "Cheese": {
+        "RegularPrice": {
+            "Symbol": "$",
+            "Amount": 7.42
+        },
+        "Name": "Cheese"
+    }
 }
+
+
