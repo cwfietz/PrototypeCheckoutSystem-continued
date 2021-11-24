@@ -1,21 +1,22 @@
 ## Notes:
 Main menu choices:
-1. Edit product and prices list
-2. Edit promitions
-3. Edit customer basket
+1. Show product and prices list
+2. Show promotions
+3. Show customer basket
 4. Calculate customer basket
 
 ## Limitations:
+- At this time the first three menu items only allow the user to display. There is no option to edit yet.
+
 ## Design choices:
+- Using Json files as there are prebuilt modules (in this case Newtonsoft.Json) for handling the serialization and deserialization of json to data structures.
+- Current price catalog and promotions as input text files rather than database engine data
+- No logging as I am not yet familiar with C#’s logging modules
+- No consideration for translating amounts into other currencies. e.g. no translating into U.S.A. dollars.
 - Rounding in GroceryCo’s favour
 - All time in local time
     - events would otherwise be recorded in UTC - we make this assumption as the kiosks are in physical stores and the transactions aren’t happening all hours of the day possibly crossing midnight and therefore different dates.
     - Promotions change at the last minute but are assumed to be in effect only on given dates not during different hours or minutes of a day.
-        - Future challenge: use UTC times for everything so as to make a promotion effective at a moment rather than a date.
-- Current price catalog and promotions as input text files rather than database engine data
-- Effective price listed on receipt even though it isn’t called for in the instructions
-- No logging as I am not yet familiar with C#’s logging modules
-- No consideration for translating amounts into other currencies. e.g. no translating into U.S.A. dollars.
 
 ## Assumptions:
 - Prices in dollars though ‘$’ can be replaced with other symbols
@@ -33,10 +34,11 @@ Main menu choices:
     apple
     ```
 
-- Won’t use commas in customer basket file
 - Width of receipt on paper fixed
 - Lowest price (regular or effective) is zero. No negative prices.
 - No sales that increase the prices.
 
-
+## See:
+    - Domain.md a list of the objects I considered.
+    - Notes.md files for the notes to myself as I progressed through the project.
 
