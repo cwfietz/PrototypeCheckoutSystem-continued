@@ -71,7 +71,12 @@ namespace PrototypeCheckoutSystem
         private static void ShowProductAndPricesList()
         {
             ClearAndShowHeading("Show product and prices list");
-            var catalogue = new ProductCatalogue();
+
+            //var productSeedCatalogue = ProductCatalogue.GenerateSeedCatalogue();
+            //ProductCatalogue.WriteCatalogueToFile(productSeedCatalogue);
+
+            var interumCatalogue = ProductCatalogue.ReadCatalogueFromFile();
+            var catalogue = new ProductCatalogue(interumCatalogue);
             Console.WriteLine(catalogue.ToString());
             ReturnToMainMenu();
         }
@@ -89,7 +94,8 @@ namespace PrototypeCheckoutSystem
             //var customerSeedBasket = CustomerBasket.GeneratateSeedCustomerBasket();
             //CustomerBasket.WriteCustomerBasketToFile(customerSeedBasket);
 
-            var customerBasket = new CustomerBasket();
+            var interumBasket = CustomerBasket.ReadCustomerBasketFromFile();
+            var customerBasket = new CustomerBasket(interumBasket);
             Console.WriteLine(customerBasket.ToString());
             ReturnToMainMenu();
         }
@@ -97,6 +103,15 @@ namespace PrototypeCheckoutSystem
         private static void CalculateCustomerBasket()
         {
             ClearAndShowHeading("Calculate customer basket");
+
+            var interumCatalogue = ProductCatalogue.ReadCatalogueFromFile();
+            var catalogue = new ProductCatalogue(interumCatalogue);
+
+            var interumBasket = CustomerBasket.ReadCustomerBasketFromFile();
+            var customerBasket = new CustomerBasket(interumBasket);
+
+            var receipt = new Calculate(catalogue, customerBasket);
+
             ReturnToMainMenu();
         }
 

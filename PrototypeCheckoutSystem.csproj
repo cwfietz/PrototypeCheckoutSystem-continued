@@ -51,12 +51,15 @@
     <Compile Include="ProductCatalogueTests.cs" />
     <Compile Include="ProductCatalogue.cs" />
     <Compile Include="CustomerBasket.cs" />
+    <Compile Include="Calculate.cs" />
+    <Compile Include="CalculateTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="SchemaList.json" />
     <None Include="ExampleCatalogueAsDictOfProducts.json" />
     <None Include="CatalogueFile.json" />
+    <None Include="CustomerBasketFile.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

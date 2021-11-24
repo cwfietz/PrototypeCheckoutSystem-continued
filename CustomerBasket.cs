@@ -10,10 +10,10 @@ namespace PrototypeCheckoutSystem
         private List<string> CustomerBasketList { get; set; }
         private static string filepath = "../../CustomerBasketFile.json";
 
-        public CustomerBasket()
+        public CustomerBasket(List<string> interumCustomerBasket)
         {
-            CustomerBasketList = ReadCustomerBasketFromFile();
-        }
+            CustomerBasketList = interumCustomerBasket;
+    }
 
         public static List<string> GeneratateSeedCustomerBasket()
         {
@@ -25,7 +25,7 @@ namespace PrototypeCheckoutSystem
             customerBasket.Add("Apple");
             customerBasket.Add("Bread");
             customerBasket.Add("Nutmeg");
-            customerBasket.Add("Apple");
+
             return customerBasket;
         }
 
@@ -35,7 +35,7 @@ namespace PrototypeCheckoutSystem
             File.WriteAllText(filepath, output);
         }
 
-        public List<string> ReadCustomerBasketFromFile()
+        public static List<string> ReadCustomerBasketFromFile()
         {
             var customerBasketReadFromFile = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(filepath));
             return customerBasketReadFromFile;

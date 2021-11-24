@@ -13,9 +13,9 @@ namespace PrototypeCheckoutSystem
         private static string filepath = "../../CatalogueFile.json";
         private static string MoneySymbol = "$";
 
-        public ProductCatalogue()
+        public ProductCatalogue(Dictionary<string, decimal> productCatalogue)
         {
-            ProductCataloguDict = ReadCatalogueFromFile();
+            ProductCataloguDict = productCatalogue;
         }
 
         public static Dictionary<string, decimal> GenerateSeedCatalogue()
@@ -48,7 +48,7 @@ namespace PrototypeCheckoutSystem
             File.WriteAllText(filepath, output);
         }
 
-        public Dictionary<string, decimal> ReadCatalogueFromFile()
+        public static Dictionary<string, decimal> ReadCatalogueFromFile()
         {
             var catalogueReadFromFile = JsonConvert.DeserializeObject<Dictionary<string, decimal>>(File.ReadAllText(filepath));
             return catalogueReadFromFile;
