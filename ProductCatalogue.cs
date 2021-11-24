@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+
 
 namespace PrototypeCheckoutSystem
 {
@@ -18,9 +20,21 @@ namespace PrototypeCheckoutSystem
             ProductCataloguDict.Add(product.Name, product);
         }
 
-        public override string ToString()
+        public string DisplayAsDictionary()
         {
             return JsonConvert.SerializeObject(ProductCataloguDict);
+        }
+
+        public override string ToString()
+        {
+            string output="\n";
+
+            foreach(var item in ProductCataloguDict.OrderBy(product => product.Key))
+            {
+                output += item.Value + "\n";
+            }
+
+            return output;
         }
     }
 }

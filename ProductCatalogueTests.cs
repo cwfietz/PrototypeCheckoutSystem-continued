@@ -15,7 +15,7 @@ namespace PrototypeCheckoutSystem
         public void CanWriteProductCatalogueAsString()
         {
             var testProductCatalogue = new ProductCatalogue();
-            Assert.AreEqual("{}", testProductCatalogue.ToString());
+            Assert.AreEqual("{}", testProductCatalogue.DisplayAsDictionary());
         }
 
         [Test()]
@@ -24,7 +24,7 @@ namespace PrototypeCheckoutSystem
             var testProduct = new Product("Pineapple", 1.08);
             var testProductCatalogue = new ProductCatalogue();
             testProductCatalogue.Add(testProduct);
-            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"}}", testProductCatalogue.ToString());
+            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"}}", testProductCatalogue.DisplayAsDictionary());
         }
 
         [Test()]
@@ -33,11 +33,24 @@ namespace PrototypeCheckoutSystem
             var testProduct = new Product("Pineapple", 1.08);
             var testProductCatalogue = new ProductCatalogue();
             testProductCatalogue.Add(testProduct);
-            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"}}", testProductCatalogue.ToString());
+            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"}}", testProductCatalogue.DisplayAsDictionary());
             var testProduct2 = new Product("Pepperoni", 5.73);
             testProductCatalogue.Add(testProduct2);
-            Console.WriteLine(testProductCatalogue.ToString());
-            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"},\"Pepperoni\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":5.73},\"Name\":\"Pepperoni\"}}", testProductCatalogue.ToString());
+            Console.WriteLine(testProductCatalogue.DisplayAsDictionary());
+            Assert.AreEqual("{\"Pineapple\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":1.08},\"Name\":\"Pineapple\"},\"Pepperoni\":{\"RegularPrice\":{\"Symbol\":\"$\",\"Amount\":5.73},\"Name\":\"Pepperoni\"}}", testProductCatalogue.DisplayAsDictionary());
+        }
+
+        [Test()]
+        public void CanDisplayCatalogueToUsers()
+        {
+            var testProduct = new Product("Pineapple", 1.08);
+            var testProduct2 = new Product("Pepperoni", 5.73);
+
+            var testProductCatalogue = new ProductCatalogue();
+            testProductCatalogue.Add(testProduct2);
+            testProductCatalogue.Add(testProduct);
+            Console.WriteLine(testProductCatalogue);
+            Assert.AreEqual("\nPepperoni: $5.73\nPineapple: $1.08\n", testProductCatalogue.ToString());
         }
     }
 }

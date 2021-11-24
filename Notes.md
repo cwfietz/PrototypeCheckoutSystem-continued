@@ -730,3 +730,6 @@ Next, make a new diplay method.
 
 12345678901234567890123456789012345678901234567890
          1         2         3         4         5
+                  
+[How to Sort a C# Dictionary By Key (and when not to!)]()https://csharpsage.com/sort-dictionary-by-key/#One-off_sorting_dictionary_by_key_and_by_value)
+
