@@ -7,14 +7,8 @@ namespace PrototypeCheckoutSystem
     {
         public static void Main(string[] args)
         {
-            //Menu.PopulateMenuItems();
-            //Menu.MainMenu();
-
-            Dictionary<string, decimal> products = ProductCatalogue.GenerateSeedCatalogue();
-            ProductCatalogue.WriteCatalogueToFile(products);
-            var catalogue = new ProductCatalogue();
-            Console.WriteLine(catalogue.ToString());
-            Console.WriteLine(catalogue.DisplayAsDictionary());
+            Menu.PopulateMenuItems();
+            Menu.MainMenu();
 
             System.Environment.Exit(0);
         }

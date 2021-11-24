@@ -11,9 +11,9 @@ namespace PrototypeCheckoutSystem
         {
             MenuItems = new List<MenuItem>
             {
-                new MenuItem {Description = "Show product and prices list", Execute = EditProductAndPricesList},
-                new MenuItem {Description = "Show promotions", Execute = EditPromotions},
-                new MenuItem {Description = "Show customer basket", Execute = EditCustomerBasket},
+                new MenuItem {Description = "Show product and prices list", Execute = ShowProductAndPricesList},
+                new MenuItem {Description = "Show promotions", Execute = ShowPromotions},
+                new MenuItem {Description = "Show customer basket", Execute = ShowCustomerBasket},
                 new MenuItem {Description = "Calculate customer basket", Execute = CalculateCustomerBasket},
                 new MenuItem {Description = "Exit", Execute = Exit},
             };
@@ -68,19 +68,21 @@ namespace PrototypeCheckoutSystem
             MainMenu();
         }
 
-        private static void EditProductAndPricesList()
+        private static void ShowProductAndPricesList()
         {
             ClearAndShowHeading("Edit product and prices list");
+            var catalogue = new ProductCatalogue();
+            Console.WriteLine(catalogue.ToString());
             ReturnToMainMenu();
         }
 
-        private static void EditPromotions()
+        private static void ShowPromotions()
         {
             ClearAndShowHeading("Edit promotions");
             ReturnToMainMenu();
         }
 
-        private static void EditCustomerBasket()
+        private static void ShowCustomerBasket()
         {
             ClearAndShowHeading("Edit customer basket");
             ReturnToMainMenu();
