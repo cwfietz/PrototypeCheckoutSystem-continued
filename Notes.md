@@ -833,3 +833,13 @@ Redo MoneyAmount and Product tests
 Having the ProductCatalogue retrieve the data from the file is proving untestable and probably a bad design.
 Tomorrow I will try separating the file read and writing parts of the ProductCatalogue so that the other operations can be tested.
 
+
+
+Add CustomerBasket 
+
+using ProductCatalogue as a template
+neither should refer to reading the file in the constructor
+
+Spent to much time setting up a dev environment and too much time focusing on files instead of the core problem, implementing promotions.
+Next, implement Calculate and Promotions
+

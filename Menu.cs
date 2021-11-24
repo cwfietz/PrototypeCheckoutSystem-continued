@@ -70,7 +70,7 @@ namespace PrototypeCheckoutSystem
 
         private static void ShowProductAndPricesList()
         {
-            ClearAndShowHeading("Edit product and prices list");
+            ClearAndShowHeading("Show product and prices list");
             var catalogue = new ProductCatalogue();
             Console.WriteLine(catalogue.ToString());
             ReturnToMainMenu();
@@ -78,13 +78,19 @@ namespace PrototypeCheckoutSystem
 
         private static void ShowPromotions()
         {
-            ClearAndShowHeading("Edit promotions");
+            ClearAndShowHeading("Show promotions");
             ReturnToMainMenu();
         }
 
         private static void ShowCustomerBasket()
         {
-            ClearAndShowHeading("Edit customer basket");
+            ClearAndShowHeading("Show customer basket");
+
+            //var customerSeedBasket = CustomerBasket.GeneratateSeedCustomerBasket();
+            //CustomerBasket.WriteCustomerBasketToFile(customerSeedBasket);
+
+            var customerBasket = new CustomerBasket();
+            Console.WriteLine(customerBasket.ToString());
             ReturnToMainMenu();
         }
 
