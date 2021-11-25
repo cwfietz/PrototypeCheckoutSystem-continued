@@ -18,8 +18,16 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
-            Console.WriteLine(calculate.SortedBasketToString());
             Assert.AreEqual("\nApple: 2\nBread: 2\nEggs: 1\nMilk: 1\nNutmeg: 1\n", calculate.SortedBasketToString());
+        }
+
+        [Test()]
+        public void CanRetrievePricesForBasket()
+        {
+            var calculate = GetSeedCalculate();
+            calculate.CountBasket();
+            calculate.RetrievePricesForBasket();
+            Assert.AreEqual("\nApple: $1.08 2  $2.16\nBread: $3.54 2  $7.08\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1  $4.93\n", calculate.ProductReceiptEntriesToString());
         }
 
         private Calculate GetSeedCalculate()

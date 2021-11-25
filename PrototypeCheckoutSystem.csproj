@@ -53,6 +53,10 @@
     <Compile Include="CustomerBasket.cs" />
     <Compile Include="Calculate.cs" />
     <Compile Include="CalculateTests.cs" />
+    <Compile Include="ProductReceiptDetailsTests.cs" />
+    <Compile Include="ProductReceiptDetails.cs" />
+    <Compile Include="PromotionTests.cs" />
+    <Compile Include="Promotion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -9,7 +9,7 @@ namespace PrototypeCheckoutSystem
 {
     public class ProductCatalogue
     {
-        private Dictionary<string, decimal> ProductCataloguDict;
+        public Dictionary<string, decimal> ProductCataloguDict;
         private static string filepath = "../../CatalogueFile.json";
         private static string MoneySymbol = "$";
 

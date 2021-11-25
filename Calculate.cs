@@ -9,7 +9,7 @@ namespace PrototypeCheckoutSystem
         public ProductCatalogue catalogue;
         public CustomerBasket customerBasket;
         public SortedDictionary<string, int> sortedBasket;
-
+        public List<ProductReceiptDetails> productReceiptEntries;
 
         public Calculate(ProductCatalogue catalogue, CustomerBasket customerBasket)
         {
@@ -19,7 +19,8 @@ namespace PrototypeCheckoutSystem
 
         public void CountBasket()
         {
-            var sortedBasket = new SortedDictionary<string, int>();
+            this.sortedBasket = new SortedDictionary<string, int>();
+
             if (customerBasket == null)
             {
                 Console.WriteLine("Empty basket");
@@ -40,8 +41,31 @@ namespace PrototypeCheckoutSystem
                     sortedBasket.Add(item, 1);
                 }
             }
+        }
 
-            this.sortedBasket = sortedBasket;
+        public void RetrievePricesForBasket()
+        {
+            this.productReceiptEntries = new List<ProductReceiptDetails>();
+
+            foreach(var productName in this.sortedBasket)
+            {
+                if (!catalogue.ProductCataloguDict.ContainsKey(productName.Key))
+                {
+                    Console.WriteLine("Basket contains something not in the catalogue");
+                    throw new Exception();
+                }
+
+                var regularPrice = catalogue.ProductCataloguDict[productName.Key];
+                var quantity = productName.Value;
+                var promotionPlaceHolder = new Promotion();
+                var effectivePrice = new MoneyAmount(regularPrice * quantity);
+
+                var interumProductReceiptDetails = new ProductReceiptDetails(
+                    new Product(productName.Key, (decimal)regularPrice),
+                    quantity, promotionPlaceHolder, effectivePrice);
+
+                productReceiptEntries.Add(interumProductReceiptDetails);
+            }
         }
 
         public string SortedBasketToString()
@@ -51,6 +75,18 @@ namespace PrototypeCheckoutSystem
             foreach (var item in sortedBasket)
             {
                 output += item.Key + ": " + item.Value + "\n";
+            }
+
+            return output;
+        }
+
+        public string ProductReceiptEntriesToString()
+        {
+            string output = "\n";
+
+            foreach (var item in productReceiptEntries)
+            {
+                output += item.ToString() + "\n";
             }
 
             return output;

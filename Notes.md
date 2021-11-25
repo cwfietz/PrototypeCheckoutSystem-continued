@@ -847,3 +847,9 @@ Spending too much time on Classes and Builders
 
 Continuing to develop solution using TDD.
 
+
+Add RetrievePricesForBasket()
+
+and ProductReceiptDetails as list items for a simple receipt.
+Added a stub for Promotions as an empty string.
+Next, total price
