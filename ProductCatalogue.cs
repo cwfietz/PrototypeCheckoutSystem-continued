@@ -4,7 +4,6 @@ using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-
 namespace PrototypeCheckoutSystem
 {
     public class ProductCatalogue
@@ -54,10 +53,11 @@ namespace PrototypeCheckoutSystem
             return catalogueReadFromFile;
         }
 
-        //public void Add(Product product)
-        //{
-        //    ProductCataloguDict.Add(product.Name, product);
-        //}
+        internal void Add(Product product)
+        {
+            ProductCataloguDict.Add(product.Name, (decimal) product.RegularPrice);
+
+        }
 
         public string DisplayAsDictionary()
         {
@@ -66,9 +66,9 @@ namespace PrototypeCheckoutSystem
 
         public override string ToString()
         {
-            string output="\n";
+            string output = "\n";
 
-            foreach(var item in ProductCataloguDict.OrderBy(product => product.Key))
+            foreach (var item in ProductCataloguDict.OrderBy(product => product.Key))
             {
                 output += item.Key + ": " + MoneySymbol + item.Value + "\n";
             }

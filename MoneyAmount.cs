@@ -23,5 +23,10 @@ namespace PrototypeCheckoutSystem
         {
             return Symbol + Amount;
         }
+
+        public static explicit operator decimal(MoneyAmount v)
+        {
+            return v.Amount;
+        }
     }
 }

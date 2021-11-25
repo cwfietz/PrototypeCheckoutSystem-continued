@@ -1,5 +1,4 @@
-﻿using System;
-namespace PrototypeCheckoutSystem
+﻿namespace PrototypeCheckoutSystem
 {
     public class Promotion
     {
