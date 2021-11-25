@@ -853,3 +853,12 @@ Add RetrievePricesForBasket()
 and ProductReceiptDetails as list items for a simple receipt.
 Added a stub for Promotions as an empty string.
 Next, total price
+
+- Used a dictionary for the Product Catalogue as it can be queried at O(1). I'd expect an actual catalogue to be very large.
+- Used a sorted dictionary for sorting the basket as I do not expect the basket to be so large that O(n*log()n)) is too much of a cost and it provides the sorting.
+- Used a list for the ProductReceiptEntries as the baskets has been sorted.
+
+Remove unecessary usings
+
+uncommented and fixed tests
+for ProductCatalogueTests
