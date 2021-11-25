@@ -23,10 +23,10 @@ namespace PrototypeCheckoutSystem
         public override string ToString()
         {
             return 
-                product.ToString() + " " +
-                quantity.ToString() + " " +
-                promotion.ToString() + " " +
-                effectivePrice.ToString();
+                product.ToString().PadRight(15) + " " +
+                quantity.ToString().PadRight(3) + " " +
+                promotion.ToString().PadRight(24) + " " +
+                effectivePrice.ToString().PadLeft(6);
         }
     }
 }

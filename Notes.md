@@ -871,3 +871,8 @@ Add Promotions and updated CalculateTests
 
 - The promotions are shown in json format. They are not read from a file but stored in a GenerateSeedPromotions() method.
 - There remain lots of opportunities to refactor.
+
+- The receipt output has many hardcoded field widths and many of the tests are
+dependent on the receipt so many of the tests are fragile. A proper separation
+of the contents and the output widths would be much better. Also not using hard
+coded numbers in the LefPad() and RightPad() methods.

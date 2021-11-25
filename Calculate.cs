@@ -224,8 +224,8 @@ namespace PrototypeCheckoutSystem
         {
             string output = "\n";
             output += ProductReceiptEntriesToString();
-            output += "Total: ";
-            output += TotalBasket().ToString();
+            output += "\n";
+            output += ("Total: " +  TotalBasket().ToString()).PadLeft(51);
             output += "\n";
             return output;
         }

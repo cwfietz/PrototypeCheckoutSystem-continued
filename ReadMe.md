@@ -11,6 +11,10 @@ Number 4. prints a rough receipt
 - At this time the first three menu items only allow the user to display. There is no option to edit yet.
 - The promotions are shown in json format. They are not read from a file but stored in a GenerateSeedPromotions() method.
 - There remain lots of opportunities to refactor.
+- For example, the receipt output has many hardcoded field widths and many of the tests are
+dependent on the receipt so many of the tests are fragile. A proper separation
+of the contents and the output widths would be much better. Also not using hard
+coded numbers in the LefPad() and RightPad() methods.
 
 ## Design choices:
 - Using Json files as there are prebuilt modules (in this case Newtonsoft.Json) for handling the serialization and deserialization of json to data structures.

@@ -19,7 +19,7 @@ namespace PrototypeCheckoutSystem
                 promotion,
                 effectivePrice
             );
-            Assert.AreEqual("nameOfProduct: $1.23 3  $3.69", testProductReceiptDetails.ToString());
+            Assert.AreEqual("nameOfProduct: $1.23 3                             $3.69", testProductReceiptDetails.ToString());
         }
     }
 }
