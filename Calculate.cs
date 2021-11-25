@@ -17,6 +17,13 @@ namespace PrototypeCheckoutSystem
             this.customerBasket = customerBasket;
         }
 
+        public void ProcessBasket()
+        {
+            CountBasket();
+            RetrievePricesForBasket();
+            Console.WriteLine(ReceiptToString());
+        }
+
         public void CountBasket()
         {
             this.sortedBasket = new SortedDictionary<string, int>();
@@ -27,7 +34,7 @@ namespace PrototypeCheckoutSystem
                 throw new Exception();
             }
 
-            foreach (var item in customerBasket.CustomerBasketList )
+            foreach (var item in customerBasket.CustomerBasketList)
             {
                 if (sortedBasket.ContainsKey(item))
                 {
@@ -47,7 +54,7 @@ namespace PrototypeCheckoutSystem
         {
             this.productReceiptEntries = new List<ProductReceiptDetails>();
 
-            foreach(var productName in this.sortedBasket)
+            foreach (var productName in this.sortedBasket)
             {
                 if (!catalogue.ProductCataloguDict.ContainsKey(productName.Key))
                 {
@@ -68,6 +75,23 @@ namespace PrototypeCheckoutSystem
             }
         }
 
+        internal MoneyAmount TotalBasket()
+        {
+            if (productReceiptEntries.Count <= 0)
+            {
+                Console.WriteLine("There seems to nothing in the basket.");
+                throw new Exception();
+            }
+
+            decimal totalPrice = 0;
+            foreach (var entry in productReceiptEntries)
+            {
+                totalPrice += entry.effectivePrice.Amount;
+            }
+            var finalTotalPrice = new MoneyAmount(totalPrice);
+            return finalTotalPrice;
+        }
+
         public string SortedBasketToString()
         {
             string output = "\n";
@@ -84,11 +108,21 @@ namespace PrototypeCheckoutSystem
         {
             string output = "\n";
 
-            foreach (var item in productReceiptEntries)
+            foreach (var entry in productReceiptEntries)
             {
-                output += item.ToString() + "\n";
+                output += entry.ToString() + "\n";
             }
 
+            return output;
+        }
+
+        public string ReceiptToString()
+        {
+            string output = "\n";
+            output += ProductReceiptEntriesToString();
+            output += "Total: ";
+            output += TotalBasket().ToString();
+            output += "\n";
             return output;
         }
 

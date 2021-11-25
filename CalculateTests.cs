@@ -30,6 +30,27 @@ namespace PrototypeCheckoutSystem
             Assert.AreEqual("\nApple: $1.08 2  $2.16\nBread: $3.54 2  $7.08\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1  $4.93\n", calculate.ProductReceiptEntriesToString());
         }
 
+        [Test()]
+        public void CanRetrieveTotalPriceForBasketWithNoPromotions()
+        {
+            var calculate = GetSeedCalculate();
+            calculate.CountBasket();
+            calculate.RetrievePricesForBasket();
+            // Console.WriteLine(calculate.ProductReceiptEntriesToString());
+            calculate.TotalBasket();
+            Assert.AreEqual("$25.16", calculate.TotalBasket().ToString());
+        }
+
+        [Test()]
+        public void CanPrintReceipt()
+        {
+            var calculate = GetSeedCalculate();
+            calculate.CountBasket();
+            calculate.RetrievePricesForBasket();
+            // Console.WriteLine(calculate.ReceiptToString());
+            Assert.AreEqual("\n\nApple: $1.08 2  $2.16\nBread: $3.54 2  $7.08\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1  $4.93\nTotal: $25.16\n", calculate.ReceiptToString());
+        }
+
         private Calculate GetSeedCalculate()
         {
             var interumCatalogue = ProductCatalogue.GenerateSeedCatalogue();

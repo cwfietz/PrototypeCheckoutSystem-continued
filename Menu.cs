@@ -111,8 +111,7 @@ namespace PrototypeCheckoutSystem
             var customerBasket = new CustomerBasket(interumBasket);
 
             var calculation = new Calculate(catalogue, customerBasket);
-            calculation.CountBasket();
-            Console.WriteLine(calculation.ToString());
+            calculation.ProcessBasket();
 
             ReturnToMainMenu();
         }
