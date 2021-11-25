@@ -37,12 +37,12 @@ namespace PrototypeCheckoutSystem
 
         public string PromotionToString()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented) ;
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         public override string ToString()
         {
-            return "";
+            return Descriptor;
         }
     }
 }

@@ -26,8 +26,9 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
+            calculate.GetActivePromotions();
             calculate.RetrievePricesForBasket();
-            Assert.AreEqual("\nApple: $1.08 2  $2.16\nBread: $3.54 2  $7.08\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1  $4.93\n", calculate.ProductReceiptEntriesToString());
+            Assert.AreEqual("\nApple: $1.08 2 buy 2 for $1.75 $1.75\nBread: $3.54 2 buy 1 get 1 for 30% off $6.02\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1 on sale for $3.18 each $3.18\n", calculate.ProductReceiptEntriesToString());
         }
 
         [Test()]
@@ -35,10 +36,9 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
+            calculate.GetActivePromotions();
             calculate.RetrievePricesForBasket();
-            // Console.WriteLine(calculate.ProductReceiptEntriesToString());
-            calculate.TotalBasket();
-            Assert.AreEqual("$25.16", calculate.TotalBasket().ToString());
+            Assert.AreEqual("$21.94", calculate.TotalBasket().ToString());
         }
 
         [Test()]
@@ -46,9 +46,9 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
+            calculate.GetActivePromotions();
             calculate.RetrievePricesForBasket();
-            // Console.WriteLine(calculate.ReceiptToString());
-            Assert.AreEqual("\n\nApple: $1.08 2  $2.16\nBread: $3.54 2  $7.08\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1  $4.93\nTotal: $25.16\n", calculate.ReceiptToString());
+            Assert.AreEqual("\n\nApple: $1.08 2 buy 2 for $1.75 $1.75\nBread: $3.54 2 buy 1 get 1 for 30% off $6.02\nEggs: $8.14 1  $8.14\nMilk: $2.85 1  $2.85\nNutmeg: $4.93 1 on sale for $3.18 each $3.18\nTotal: $21.94\n", calculate.ReceiptToString());
         }
 
         private Calculate GetSeedCalculate()

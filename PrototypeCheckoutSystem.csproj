@@ -57,6 +57,8 @@
     <Compile Include="ProductReceiptDetails.cs" />
     <Compile Include="PromotionTests.cs" />
     <Compile Include="Promotion.cs" />
+    <Compile Include="PromotionsSourceTest.cs" />
+    <Compile Include="PromotionsSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

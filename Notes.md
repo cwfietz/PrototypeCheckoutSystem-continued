@@ -862,3 +862,12 @@ Remove unecessary usings
 
 uncommented and fixed tests
 for ProductCatalogueTests
+
+Added more Promotions tests.
+
+Next, begin to implement promotions.
+
+Add Promotions and updated CalculateTests
+
+- The promotions are shown in json format. They are not read from a file but stored in a GenerateSeedPromotions() method.
+- There remain lots of opportunities to refactor.

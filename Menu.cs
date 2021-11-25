@@ -84,6 +84,8 @@ namespace PrototypeCheckoutSystem
         private static void ShowPromotions()
         {
             ClearAndShowHeading("Show promotions");
+            var promotionsSource = PromotionsSource.GenerateSeedPromotionsSource();
+            Console.WriteLine(promotionsSource.ToString());
             ReturnToMainMenu();
         }
 
