@@ -121,7 +121,7 @@ namespace PrototypeCheckoutSystem
         {
             ClearAndShowHeading("Exit");
             Console.WriteLine("Exiting program.");
-            System.Environment.Exit(0);  // or Environment.Exit(0);
+            System.Environment.Exit(0);
         }
     }
 }

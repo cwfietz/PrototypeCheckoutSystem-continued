@@ -18,7 +18,8 @@ namespace PrototypeCheckoutSystem
         {
             var calculate = GetSeedCalculate();
             calculate.CountBasket();
-            Console.WriteLine(calculate.ToString());
+            Console.WriteLine(calculate.SortedBasketToString());
+            Assert.AreEqual("\nApple: 2\nBread: 2\nEggs: 1\nMilk: 1\nNutmeg: 1\n", calculate.SortedBasketToString());
         }
 
         private Calculate GetSeedCalculate()

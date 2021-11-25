@@ -44,6 +44,18 @@ namespace PrototypeCheckoutSystem
             this.sortedBasket = sortedBasket;
         }
 
+        public string SortedBasketToString()
+        {
+            string output = "\n";
+
+            foreach (var item in sortedBasket)
+            {
+                output += item.Key + ": " + item.Value + "\n";
+            }
+
+            return output;
+        }
+
         public override string ToString()
         {
             string output = "\n";

@@ -845,3 +845,5 @@ Next, implement Calculate and Promotions
 
 Spending too much time on Classes and Builders
 
+Continuing to develop solution using TDD.
+
