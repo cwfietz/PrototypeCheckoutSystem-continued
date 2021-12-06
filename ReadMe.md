@@ -5,7 +5,7 @@ Main menu choices:
 3. Show customer basket
 4. Calculate customer basket
 
-Number 4. prints a rough receipt 
+Number 4. Prints a rough receipt 
 
 ## Limitations:
 - At this time the first three menu items only allow the user to display. There is no option to edit yet.

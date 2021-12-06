@@ -858,7 +858,7 @@ Next, total price
 - Used a sorted dictionary for sorting the basket as I do not expect the basket to be so large that O(n*log()n)) is too much of a cost and it provides the sorting.
 - Used a list for the ProductReceiptEntries as the baskets has been sorted.
 
-Remove unecessary usings
+Remove unnecessary usings
 
 uncommented and fixed tests
 for ProductCatalogueTests
@@ -876,3 +876,27 @@ Add Promotions and updated CalculateTests
 dependent on the receipt so many of the tests are fragile. A proper separation
 of the contents and the output widths would be much better. Also not using hard
 coded numbers in the LefPad() and RightPad() methods.
+
+
+2021-12-06
+00:39
+[Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
+[Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+
+
+git clone --bare https://github.com/exampleuser/old-repository.git
+git clone --bare https://github.com/cwfietz/PrototypeCheckoutSystem.git
+
+exampleuser/old-repository.git
+
+PrototypeCheckoutSystem-continued
+cwfietz/PrototypeCheckoutSystem-continued
+
+git push --mirror https://github.com/exampleuser/new-repository.git
+git push --mirror https://github.com/cwfietz/PrototypeCheckoutSystem-continued.git
+
+cd ..
+rm -rf old-repository
+rm -rf PrototypeCheckoutSystem.git
+
+git clone https://github.com/cwfietz/PrototypeCheckoutSystem-continued.git

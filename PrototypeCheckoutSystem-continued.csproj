@@ -67,6 +67,7 @@
     <None Include="CatalogueFile.json" />
     <None Include="CustomerBasketFile.json" />
     <None Include="ReadMe.md" />
+    <None Include="Notes.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
