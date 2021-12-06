@@ -900,3 +900,19 @@ rm -rf old-repository
 rm -rf PrototypeCheckoutSystem.git
 
 git clone https://github.com/cwfietz/PrototypeCheckoutSystem-continued.git
+
+
+The following code requires the user to press enter after selecting a menu number. Would like to see if, for menus of 9 or fewer choices, they don't have to press enter.
+
+} while (!int.TryParse(Console.ReadLine(), out userInput) ||
+                     userInput < 1 || MenuItems.Count < userInput);
+                     
+Console.ReadLine() seems to provde a sting while Console.ReadKey() returns a System.ConsoleKeyInfo type data and can't be cast to be a string.
+                     
+[How do I convert a Console.Readkey to an int c#](https://stackoverflow.com/questions/28955029/how-do-i-convert-a-console-readkey-to-an-int-c-sharp/28955177)
+"Simply said you are trying to convert System.ConsoleKeyInfo to an int."
+
+I am going to leave this detail for now. It works well enough. I will fix larger issues first.
+
+I'm looking at the calculate.cs file and looking at ways of changing ApplyPromotions() to be more extensible by making a separate class for holding a mapping of TypeOfPromotion values to Action methods.
+
