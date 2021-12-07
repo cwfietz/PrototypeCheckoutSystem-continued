@@ -914,5 +914,77 @@ Console.ReadLine() seems to provde a sting while Console.ReadKey() returns a Sys
 
 I am going to leave this detail for now. It works well enough. I will fix larger issues first.
 
-I'm looking at the calculate.cs file and looking at ways of changing ApplyPromotions() to be more extensible by making a separate class for holding a mapping of TypeOfPromotion values to Action methods.
+I'm looking at the calculate.cs file and looking at ways of changing ApplyPromotions() to be more extensible by making a separate class for holding
+a mapping of TypeOfPromotion values to Action methods.
+
+Alternatively, have a class for each kind of promotion type with an applyPromotion() method and use polymorphism but...
+How to inspect the promotion's type and get the correct method for applying the promotion?
+Or use a different method in the promotions class for the type of promotion and just map the promotion type (from the enum) to the method name.
+
+Map<enum, Action>
+
+
+Reviewed a bunch of stackoverflow pages, there are a couple of alternatives.
+
+[Multiple If-else or enum - which one is preferable and why?](https://stackoverflow.com/questions/6126242/multiple-if-else-or-enum-which-one-is-preferable-and-why)
+
+The example that looks the closest to what I've seen before is:
+
+public enum Fruit {
+
+    APPLE("ppl") {
+        public void grow() {
+            // TODO
+        }
+    },
+    WATERMELON("wtrmln") {
+        public void grow() {
+            // TODO
+        }
+    },
+
+    // SNIP extra vitamins go here
+
+    OTHER(null) {
+        public void grow() {
+            // TODO
+        }
+    };
+
+    private static Map<String, Fruit> CODE_LOOKUP;
+    static {
+        // populate code lookup map with all fruits but other
+        Map<String, Fruit> map = new HashMap<String, Fruit>();
+        for (Fruit v : values()) {
+            if (v != OTHER) {
+                map.put(v.getCode(), v);
+            }
+        }
+        CODE_LOOKUP = Collections.unmodifiableMap(map);
+    }
+
+    public static Fruit getByCode(String code) {
+        Fruit f = CODE_LOOKUP.get(code);
+        return f == null ? OTHER : f;
+    }
+
+    private final String _code;
+
+    private Fruit(String code) {
+        _code = code;
+    }
+
+    public String getCode() {
+        return _code;
+    }
+
+    public abstract void grow();
+}
+
+And that's how you use it:
+
+Fruit.getByCode("wtrmln").grow();
+
+Dictionary
+The equivalent of HashMap in C# is Dictionary that is used as a collection of key-value pair.
 
