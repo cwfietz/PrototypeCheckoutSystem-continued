@@ -22,9 +22,10 @@ namespace PrototypeCheckoutSystem
             CountBasket();
             GetActivePromotions();
             RetrievePricesForBasket();
-
-            Console.WriteLine(ReceiptToString());
+            PrintReceipt();
         }
+
+
 
         public void CountBasket()
         {
@@ -218,6 +219,11 @@ namespace PrototypeCheckoutSystem
             }
 
             return output;
+        }
+
+        private void PrintReceipt()
+        {
+            Console.WriteLine(ReceiptToString());
         }
 
         public string ReceiptToString()
