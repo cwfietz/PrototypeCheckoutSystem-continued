@@ -10,15 +10,15 @@ namespace PrototypeCheckoutSystem
         AdditionalDiscount
     }
 
-    public class PopulatePromotionMethods
+    public class PromotionMethods
     {
-        public Dictionary<TypeOfPromotion, Action> promotionMethods;
+        public static Dictionary<TypeOfPromotion, PromotionMethodItem> promotionMethods;
 
-        public static PopulatePromotionMethods()
+        public static void PopulatePromotionMethods()
         {
-            promotionMethods = new Dictionary<TypeOfPromotion, Action>
+            promotionMethods = new Dictionary<TypeOfPromotion, PromotionMethodItem>
             {
-                { TypeOfPromotion.OnSale, (Action)OnSalePrice }
+                { TypeOfPromotion.OnSale, new PromotionMethodItem { Execute = OnSalePrice } }
             };
         }
 

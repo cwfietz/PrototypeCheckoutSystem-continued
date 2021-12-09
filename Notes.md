@@ -878,7 +878,7 @@ of the contents and the output widths would be much better. Also not using hard
 coded numbers in the LefPad() and RightPad() methods.
 
 
-2021-12-06
+Monday 2021-12-06
 00:39
 [Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository)
 [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
@@ -987,4 +987,21 @@ Fruit.getByCode("wtrmln").grow();
 
 Dictionary
 The equivalent of HashMap in C# is Dictionary that is used as a collection of key-value pair.
+
+Thursday 2021-12-09
+01:54
+
+03:45
+on line 21 of PromotionMethods class
+{ TypeOfPromotion.OnSale, new PromotionMethodItem { Execute = OnSalePrice } } No overload for 'OnSalePrice' matches delegate 'Action'
+
+This refactoring of introducing a dictionary of Dictionary<TypeOfPromotion, Action> or Dictionary<TypeOfPromotion, PromotionMethodItem>
+is turning out to be more difficult than I expected.
+
+I think I need to learn more about .Net and C# so as to understand delegates and 
+how to do what I want to do.
+
+For now, back to the C# udemy courses.
+
+03:49
 

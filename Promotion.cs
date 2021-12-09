@@ -3,13 +3,6 @@ using Newtonsoft.Json;
 
 namespace PrototypeCheckoutSystem
 {
-    public enum TypeOfPromotion
-    {
-        OnSale,
-        GroupQuantity,
-        AdditionalDiscount
-    }
-
     public class Promotion
     {
         public string ProductName { get; set; }

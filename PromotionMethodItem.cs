@@ -1,10 +1,8 @@
 ﻿using System;
 namespace PrototypeCheckoutSystem
 {
-    public class EmptyClass
+    public class PromotionMethodItem
     {
-        public EmptyClass()
-        {
-        }
+            public Action Execute { get; set; }
     }
 }
